@@ -1,11 +1,12 @@
 import { Boton } from "./Boton";
-export const Botonera = () => {
+export const Botonera = (props) => {
+  const { getLetraPulsada } = props;
   const botones = "qwertyuiopasdfghjklñzxcvbnm".split("");
 
   return (
     <div className="botones">
       {botones.map((boton) => (
-        <Boton>{boton}</Boton>
+        <Boton getLetraPulsada={getLetraPulsada}>{boton}</Boton>
       ))}
     </div>
   );
