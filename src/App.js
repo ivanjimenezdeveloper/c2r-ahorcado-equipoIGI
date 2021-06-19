@@ -1,6 +1,21 @@
 import { Botonera } from "./components/Botonera";
 
 function App() {
+  const urlAPI = "https://letras-ahorcado.herokuapp.com/letras";
+  const getPosiciones = async (palabra, letra) => {
+    const response = await fetch(
+      `${urlAPI}/${palabra.toLowerCase()}/${letra.toLowerCase()}`
+    );
+
+    if (!response.ok) {
+      return -1;
+    }
+
+    const json = await response.json();
+    console.log(json);
+    return json;
+  };
+
   const getLetraPulsada = (e) => {
     return e.target.value.toLowerCase();
   };
