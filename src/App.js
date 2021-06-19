@@ -1,4 +1,5 @@
 import { Botonera } from "./components/Botonera";
+import { PalabraSecreta } from "./components/PalabraSecreta"
 
 function App() {
   const urlAPI = "https://letras-ahorcado.herokuapp.com/letras";
@@ -41,6 +42,7 @@ function App() {
         <line className="stage1 d-none" x1="16" y1="80" x2="32" y2="80"></line>
       </svg>
       <Botonera getLetraPulsada={getLetraPulsada} />
+      <PalabraSecreta />
       <h2 className="palabraSecreta"></h2>
       <h1 className="resultado"></h1>
     </>
