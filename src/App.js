@@ -1,3 +1,5 @@
+import { Botonera } from "./components/Botonera";
+
 function App() {
   return (
     <>
@@ -20,7 +22,7 @@ function App() {
         <line className="stage2 d-none" x1="24" y1="80" x2="24" y2="16"></line>
         <line className="stage1 d-none" x1="16" y1="80" x2="32" y2="80"></line>
       </svg>
-      <div className="botones"></div>
+      <Botonera />
       <h2 className="palabraSecreta"></h2>
       <h1 className="resultado"></h1>
     </>
