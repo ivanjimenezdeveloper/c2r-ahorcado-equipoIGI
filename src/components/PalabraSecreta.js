@@ -8,5 +8,5 @@ export const PalabraSecreta = (palabra) => {
           secreta: true,
     });
   }
-  this.palabraEscondida = palabraEscondida;
+  this.escondida = escondida;
 };
