@@ -1,4 +1,9 @@
+import { Botonera } from "./components/Botonera";
+
 function App() {
+  const getLetraPulsada = (e) => {
+    return e.target.value.toLowerCase();
+  };
   return (
     <>
       <svg id="hangman" viewBox="0 0 96 96" width="300" height="300">
@@ -20,7 +25,7 @@ function App() {
         <line className="stage2 d-none" x1="24" y1="80" x2="24" y2="16"></line>
         <line className="stage1 d-none" x1="16" y1="80" x2="32" y2="80"></line>
       </svg>
-      <div className="botones"></div>
+      <Botonera getLetraPulsada={getLetraPulsada} />
       <h2 className="palabraSecreta"></h2>
       <h1 className="resultado"></h1>
     </>
