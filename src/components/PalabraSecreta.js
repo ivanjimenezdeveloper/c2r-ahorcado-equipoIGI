@@ -1,6 +1,8 @@
-export const PalabraSecreta = (palabra) => {
+import { useState } from "react";
+
+export const [PalabraSecreta, setPalabraSecreta] = useState(palabra);
   palabra = palabra.toUpperCase();
-  const palabraEscondida = [];
+  setPalabraSecreta = ["banana", "cebolla"];
   // en esta funcion (dentro del array) deberiamos poner las palabras
   for (const letra of palabra) {
       palabraEscondida.push({
@@ -8,5 +10,5 @@ export const PalabraSecreta = (palabra) => {
           secreta: true,
     });
   }
-  this.escondida = escondida;
-};
+  this.palabraEscondida = escondida;
+
