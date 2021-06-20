@@ -11,3 +11,4 @@ export const [PalabraSecreta, setPalabraSecreta] = useState(palabra);
     });
   }
   this.palabraEscondida = escondida;
+
