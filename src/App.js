@@ -1,8 +1,22 @@
 import { Botonera } from "./components/Botonera";
-import { PalabraSecreta } from "./components/PalabraSecreta"
+import { PalabraSecreta } from "./components/PalabraSecreta";
 
 function App() {
   const urlAPI = "https://letras-ahorcado.herokuapp.com/letras";
+  const urlAPIlocal = "http://localhost:3001/palabras";
+  let palabraCorrecta;
+  let palabraCorrectaArray;
+  let palabraSecreta;
+  const getPalabraAleatoria = async () => {
+    const response = await fetch(urlAPIlocal);
+    const json = await response.json();
+    const numeroRandom = Math.floor(Math.random() * json.lista.length);
+    palabraCorrecta = await json.lista[numeroRandom];
+    palabraSecreta = palabraCorrecta.split("");
+    palabraCorrectaArray = [...palabraSecreta];
+    console.log(palabraCorrectaArray);
+  };
+  getPalabraAleatoria();
   const getPosiciones = async (palabra, letra) => {
     const response = await fetch(
       `${urlAPI}/${palabra.toLowerCase()}/${letra.toLowerCase()}`
