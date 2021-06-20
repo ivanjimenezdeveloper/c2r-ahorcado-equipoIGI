@@ -20,6 +20,10 @@ function App() {
     console.log(palabraCorrectaArray);
     return palabraCorrectaArray;
   };
+
+  const aumentarError = () => {
+    setErrores(errores + 1);
+  };
   useEffect(() => getPalabraAleatoria(), []);
   const getPosiciones = async (palabra, letra) => {
     const response = await fetch(
